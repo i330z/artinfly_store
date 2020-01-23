@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+var PORT = process.env.PORT || 1337;
 
 const json = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
 const laptopjson = JSON.parse(json)
@@ -49,7 +50,7 @@ const server = http.createServer((req,res) => {
 
 })
 
-server.listen(1337, 'localhost', () =>{
+server.listen(PORT, 'localhost', () =>{
     console.log('server listening to request');
 })
  
